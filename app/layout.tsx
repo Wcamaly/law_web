@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import ScrollProgress from '@/components/motion/ScrollProgress'
+import FloatingWhatsApp from '@/components/motion/FloatingWhatsApp'
 import './globals.css'
 
 const inter = Inter({
@@ -38,9 +40,11 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
       <body className="font-sans antialiased">
+        <ScrollProgress />
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   )
