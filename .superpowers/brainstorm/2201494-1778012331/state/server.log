@@ -1,0 +1,3 @@
+{"type":"server-started","port":53440,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:53440","screen_dir":"/srv/projects/owns/landing_law/.superpowers/brainstorm/2201494-1778012331/content","state_dir":"/srv/projects/owns/landing_law/.superpowers/brainstorm/2201494-1778012331/state"}
+{"type":"screen-added","file":"/srv/projects/owns/landing_law/.superpowers/brainstorm/2201494-1778012331/content/estilo-visual.html"}
+{"type":"server-stopped","reason":"owner process exited"}

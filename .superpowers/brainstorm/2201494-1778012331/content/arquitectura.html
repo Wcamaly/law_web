@@ -1,0 +1,44 @@
+<h2>¿Cómo manejamos el contenido del sitio?</h2>
+<p class="subtitle">Tres enfoques con diferente balance entre simplicidad y flexibilidad</p>
+
+<div class="options">
+  <div class="option" data-choice="static" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Todo en código (recomendado)</h3>
+      <p>El texto y contenido vive directamente en los archivos del proyecto. Para editar, se modifica el archivo y se hace deploy. Simple, rápido, sin dependencias externas.</p>
+      <div class="pros-cons" style="margin-top:8px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Sin costo extra</li><li>Deploy instantáneo en Vercel</li><li>Cero configuración extra</li><li>Perfecto para sitios que no cambian seguido</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Para editar hay que tocar código</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="cms" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>CMS headless (Sanity o Contentful)</h3>
+      <p>El contenido se edita desde un panel web sin tocar código. Ideal si los abogados quieren actualizar textos, agregar noticias o casos de éxito ellos mismos.</p>
+      <div class="pros-cons" style="margin-top:8px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Panel de edición amigable</li><li>No requiere developer para cambiar texto</li><li>Fácil agregar blog/noticias</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Más complejo de configurar</li><li>Costo mensual si el tráfico crece</li><li>Una dependencia más</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="mdx" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Archivos Markdown (MDX)</h3>
+      <p>El contenido de cada área vive en archivos .mdx. Edición simple tipo documento, sin CMS pero más amigable que tocar JSX.</p>
+      <div class="pros-cons" style="margin-top:8px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Sin costo extra</li><li>Edición más simple que JSX</li><li>Fácil para blog/artículos</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Sigue requiriendo un deploy por cambio</li><li>Un poco más de setup inicial</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:16px;padding:12px 16px;background:#f0f9ff;border-radius:6px;border-left:4px solid #1e3a5f;font-size:12px;color:#444;">
+  <strong>Mi recomendación: A.</strong> Para un sitio institucional que no cambia seguido, tener todo en código es la solución más simple y confiable. Si en el futuro quieren agregar un blog o noticias, sumar MDX o un CMS es fácil.
+</div>

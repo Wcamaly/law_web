@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "Agentic UI Generator for Angular": {
+      "type": "http",
+      "url": "https://uiagent.mcp.telerik.com/mcp/angular"
+    }
+  }
+}
