@@ -2,21 +2,27 @@
 
 import Link from 'next/link'
 import { motion, useReducedMotion } from 'motion/react'
-import type { Area } from '@/lib/areas'
+import { areas, WHATSAPP_URL, type Area } from '@/lib/areas'
+import { toRoman } from '@/lib/numerals'
+import EditorialEyebrow from '@/components/brand/EditorialEyebrow'
+import TextReveal from '@/components/motion/TextReveal'
+import Magnetic from '@/components/motion/Magnetic'
+import CursorSpotlight from '@/components/motion/CursorSpotlight'
 
 export default function AreaHero({ area }: { area: Area }) {
   const reduced = useReducedMotion()
   const noiseId = `area-noise-${area.slug}`
+  const index = areas.findIndex((a) => a.slug === area.slug) + 1
 
   return (
     <section
-      className="relative overflow-hidden py-16 text-white md:py-20"
+      className="relative overflow-hidden py-16 text-white md:py-24"
       style={{
-        background: `linear-gradient(135deg, #1e3a5f 0%, ${area.accent} 100%)`,
+        background: 'linear-gradient(135deg, #0c1a3a 0%, #b8954a 100%)',
       }}
     >
       <svg
-        className="pointer-events-none absolute inset-0 h-full w-full hero-grain"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full hero-grain"
         aria-hidden
       >
         <filter id={noiseId}>
@@ -30,44 +36,31 @@ export default function AreaHero({ area }: { area: Area }) {
         <rect width="100%" height="100%" filter={`url(#${noiseId})`} />
       </svg>
 
-      <motion.div
-        className="pointer-events-none absolute -left-20 top-10 h-56 w-56 rounded-full blur-3xl"
-        style={{ backgroundColor: `${area.accent}55` }}
+      <svg
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full text-white/[0.08]"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
         aria-hidden
-        animate={
-          reduced
-            ? undefined
-            : {
-                x: [0, 14, -10, 0],
-                y: [0, -12, 8, 0],
-                opacity: [0.25, 0.35, 0.28],
-              }
-        }
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: [0.16, 1, 0.3, 1],
-        }}
-      />
-      <motion.div
-        className="pointer-events-none absolute -bottom-16 right-0 h-64 w-64 rounded-full blur-3xl"
-        style={{ backgroundColor: `${area.accent}44` }}
-        aria-hidden
-        animate={
-          reduced
-            ? undefined
-            : {
-                x: [0, -12, 10, 0],
-                y: [0, 16, -6, 0],
-                opacity: [0.2, 0.32, 0.22],
-              }
-        }
-        transition={{
-          duration: 22,
-          repeat: Infinity,
-          ease: [0.16, 1, 0.3, 1],
-        }}
-      />
+      >
+        <defs>
+          <pattern
+            id={`grid-${area.slug}`}
+            width="8"
+            height="8"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M 8 0 L 0 0 0 8"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.12"
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill={`url(#grid-${area.slug})`} />
+      </svg>
+
+      <CursorSpotlight opacity={0.1} tint="gold" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <motion.div
@@ -77,7 +70,7 @@ export default function AreaHero({ area }: { area: Area }) {
         >
           <Link
             href="/#areas"
-            className="group mb-8 inline-flex items-center gap-1 rounded-sm text-xs text-white/55 transition-colors hover:text-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70"
+            className="group mb-8 inline-flex items-center gap-1 rounded-sm font-sans text-xs font-medium uppercase tracking-[0.14em] text-white/55 transition-colors hover:text-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70"
           >
             <span className="inline-block transition-transform duration-300 group-hover:-translate-x-1">
               ←
@@ -86,41 +79,56 @@ export default function AreaHero({ area }: { area: Area }) {
           </Link>
         </motion.div>
 
-        <motion.div
-          className="mb-6 inline-block rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest text-white"
-          style={{ backgroundColor: area.accent }}
-          initial={reduced ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}
-        >
-          {area.shortName}
-        </motion.div>
+        <EditorialEyebrow
+          numeral={toRoman(index)}
+          label={area.shortName}
+          tone="gold-on-dark"
+          className="mb-4"
+        />
 
-        <motion.div
-          className="mb-4 text-4xl"
-          initial={reduced ? false : { opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-        >
-          {area.icon}
-        </motion.div>
+        <div className="mb-6 flex flex-wrap items-end gap-4">
+          <span className="text-4xl md:text-5xl" aria-hidden>
+            {area.icon}
+          </span>
+        </div>
 
-        <motion.h1
-          className="font-serif mb-4 max-w-2xl text-4xl font-bold leading-tight md:text-5xl"
-          initial={reduced ? false : { opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
+        <TextReveal
+          as="h1"
+          className="text-display font-serif max-w-4xl font-bold text-white"
+          stagger={0.04}
         >
           {area.name}
-        </motion.h1>
+        </TextReveal>
+
         <motion.p
-          className="max-w-xl text-lg leading-relaxed text-white/75"
+          className="mt-6 max-w-xl text-lg leading-relaxed text-white/80"
           initial={reduced ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
           {area.tagline}
         </motion.p>
+
+        <motion.div
+          className="mt-10"
+          initial={reduced ? false : { opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Magnetic strength={12}>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-2 rounded-md bg-brand-gold px-8 py-3.5 text-sm font-bold text-brand-navy shadow-md transition-[box-shadow,background-color] duration-300 hover:bg-brand-gold-light hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold"
+            >
+              Consulta inicial sin costo
+              <span className="cta-arrow-mask text-brand-navy" aria-hidden>
+                <span className="cta-arrow-inner text-base">→</span>
+              </span>
+            </a>
+          </Magnetic>
+        </motion.div>
       </div>
     </section>
   )

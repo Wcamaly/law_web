@@ -1,24 +1,9 @@
 'use client'
 
 import type { Area } from '@/lib/areas'
+import { toRoman } from '@/lib/numerals'
 import StaggerGroup, { StaggerItem } from '@/components/motion/StaggerGroup'
-
-function CheckIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-3 w-3"
-      aria-hidden
-    >
-      <path d="M20 6L9 17l-5-5" />
-    </svg>
-  )
-}
+import SectionHeader from '@/components/motion/SectionHeader'
 
 export default function ServiceList({ area }: { area: Area }) {
   return (
@@ -26,28 +11,26 @@ export default function ServiceList({ area }: { area: Area }) {
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="font-serif mb-4 text-2xl font-bold text-brand-navy md:text-3xl">
-              ¿En qué te ayudamos?
-            </h2>
-            <p className="text-base leading-relaxed text-gray-600">
-              {area.description}
-            </p>
+            <SectionHeader
+              eyebrow="Servicios"
+              title="¿En qué te ayudamos?"
+              description={area.description}
+              showUnderline={false}
+            />
           </div>
 
-          <StaggerGroup as="ul" className="list-none space-y-3">
-            {area.services.map((service) => (
+          <StaggerGroup as="ul" className="list-none space-y-0">
+            {area.services.map((service, i) => (
               <StaggerItem key={service} as="li">
-                <div className="group flex items-start gap-3">
-                  <span
-                    className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border text-white transition-[background-color,transform,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1 group-hover:brightness-110"
-                    style={{
-                      backgroundColor: area.accent,
-                      borderColor: `${area.accent}66`,
-                    }}
-                  >
-                    <CheckIcon />
+                <div className="group relative border-b border-gray-100 py-4 pl-10 transition-colors hover:bg-gray-50/60">
+                  <span className="font-serif absolute left-0 top-1/2 -translate-y-1/2 text-xs font-bold text-brand-gold/60 transition-colors group-hover:text-brand-gold md:text-sm">
+                    {toRoman(i + 1)}
                   </span>
-                  <span className="text-sm leading-relaxed text-gray-700 transition-transform duration-300 group-hover:translate-x-1">
+                  <span
+                    className="absolute bottom-0 left-10 right-0 h-px origin-left scale-x-0 bg-brand-gold transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100"
+                    aria-hidden
+                  />
+                  <span className="block text-sm leading-relaxed text-gray-700 md:text-base">
                     {service}
                   </span>
                 </div>

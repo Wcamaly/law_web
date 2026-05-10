@@ -17,7 +17,7 @@ export default function ScrollProgress() {
       aria-hidden="true"
     >
       <motion.div
-        className="h-full w-full origin-left bg-accent-civil"
+        className="h-full w-full origin-left bg-brand-gold"
         style={{ scaleX: reduced ? scrollYProgress : scaleX }}
       />
     </div>

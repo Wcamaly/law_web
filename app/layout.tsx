@@ -38,7 +38,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
+    <html
+      lang="es"
+      className={`${inter.variable} ${playfair.variable}`}
+    >
       <body className="font-sans antialiased">
         <ScrollProgress />
         <Navbar />
