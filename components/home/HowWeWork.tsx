@@ -10,37 +10,7 @@ import {
 } from 'motion/react'
 import StaggerGroup, { StaggerItem } from '@/components/motion/StaggerGroup'
 import SectionHeader from '@/components/motion/SectionHeader'
-
-const steps = [
-  {
-    roman: 'I',
-    icon: '📞',
-    title: 'Consulta',
-    description:
-      'Nos contactás por WhatsApp o email. Primera consulta sin costo para entender tu situación.',
-  },
-  {
-    roman: 'II',
-    icon: '📋',
-    title: 'Análisis',
-    description:
-      'Estudiamos tu caso en detalle, evaluamos las posibilidades y te explicamos el panorama con claridad.',
-  },
-  {
-    roman: 'III',
-    icon: '⚖️',
-    title: 'Estrategia',
-    description:
-      'Definimos el mejor camino legal: negociación, mediación o juicio según tu caso y tus objetivos.',
-  },
-  {
-    roman: 'IV',
-    icon: '✅',
-    title: 'Resultado',
-    description:
-      'Ejecutamos la estrategia y te mantenemos informado en cada etapa hasta obtener el mejor resultado.',
-  },
-] as const
+import { getDictionary } from '@/i18n'
 
 function HowWeWorkDesktop() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -51,6 +21,7 @@ function HowWeWorkDesktop() {
   })
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '-75%'])
   const lineScaleX = useTransform(scrollYProgress, [0, 1], [0, 1])
+  const steps = getDictionary().home.howWeWork.steps
 
   if (reduced) {
     return (
@@ -58,8 +29,8 @@ function HowWeWorkDesktop() {
         <div className="mx-auto max-w-6xl">
           <SectionHeader
             className="mb-12 text-center"
-            eyebrow="Proceso"
-            title="Cómo trabajamos"
+            eyebrow={getDictionary().home.howWeWork.eyebrow}
+            title={getDictionary().home.howWeWork.title}
             align="center"
           />
           <div className="grid grid-cols-2 gap-8">
@@ -89,8 +60,8 @@ function HowWeWorkDesktop() {
         <div className="mx-auto w-full max-w-6xl">
           <SectionHeader
             className="mb-10"
-            eyebrow="Proceso"
-            title="Cómo trabajamos"
+            eyebrow={getDictionary().home.howWeWork.eyebrow}
+            title={getDictionary().home.howWeWork.title}
           />
 
           <div
@@ -160,13 +131,16 @@ function HowWeWorkDesktop() {
 }
 
 function HowWeWorkMobile() {
+  const steps = getDictionary().home.howWeWork.steps
+  const { eyebrow, title } = getDictionary().home.howWeWork
+
   return (
     <section className="relative bg-white py-20 px-6 lg:hidden">
       <div className="mx-auto max-w-6xl">
         <SectionHeader
           className="mb-12 text-center"
-          eyebrow="Proceso"
-          title="Cómo trabajamos"
+          eyebrow={eyebrow}
+          title={title}
           align="center"
         />
 

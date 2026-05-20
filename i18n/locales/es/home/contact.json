@@ -1,0 +1,22 @@
+{
+  "eyebrow": "Contacto",
+  "title": "¿Tenés una consulta?",
+  "intro": "Escribinos sin compromiso. La primera consulta es gratuita y respondemos a la brevedad.",
+  "labels": {
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "location": "Ubicación",
+    "linkWhatsApp": "Escribinos por WhatsApp",
+    "hoursPlaceholder": "Atención L–V 9:00–18:00 (placeholder)"
+  },
+  "form": {
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "areaLabel": "Área",
+    "areaPlaceholder": "Elegí un área (opcional)",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Contanos brevemente tu situación",
+    "submit": "Enviar por WhatsApp"
+  },
+  "locationLine": "Mar del Plata, Argentina"
+}

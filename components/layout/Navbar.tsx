@@ -2,7 +2,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { usePathname } from 'next/navigation'
+import { useMemo, useState } from 'react'
 import {
   AnimatePresence,
   motion,
@@ -13,25 +14,31 @@ import {
 import { WHATSAPP_URL } from '@/lib/areas'
 import RomioMonogram from '@/components/brand/RomioMonogram'
 import { cn } from '@/lib/cn'
-
-const navLinks = [
-  { label: 'Inicio', href: '/#inicio' },
-  { label: 'Áreas', href: '/#areas' },
-  { label: 'Nosotros', href: '/#nosotros' },
-  { label: 'Contacto', href: '/#contacto' },
-]
+import { t } from '@/i18n'
 
 export default function Navbar() {
+  const pathname = usePathname()
+  const isHome = pathname === '/'
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const reduced = useReducedMotion()
   const { scrollY } = useScroll()
 
+  const navLinks = useMemo(
+    () => [
+      { label: t('navbar.links.home'), href: '/#inicio' },
+      { label: t('navbar.links.areas'), href: '/#areas' },
+      { label: t('navbar.links.about'), href: '/#nosotros' },
+      { label: t('navbar.links.contact'), href: '/#contacto' },
+    ],
+    [],
+  )
+
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setScrolled(latest > 80)
   })
 
-  const onLight = scrolled
+  const onLight = scrolled || isHome
 
   return (
     <motion.header
@@ -53,7 +60,7 @@ export default function Navbar() {
                 : 'border-brand-gold/35 bg-brand-gold/10 text-brand-gold-light',
             )}
           >
-            Atendemos L–V 9–18
+            {t('navbar.scheduleBadge')}
           </span>
           <Link
             href="/"
@@ -67,10 +74,10 @@ export default function Navbar() {
             <RomioMonogram className="h-8 w-8 text-brand-gold transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 md:h-9 md:w-9" />
             <span className="flex min-w-0 flex-col leading-tight">
               <span className="font-serif truncate text-[11px] font-bold tracking-[0.18em] md:text-xs">
-                ROMIO Y ASOCIADOS
+                {t('common.brand.romioLineNavbar')}
               </span>
               <span className="font-sans text-[9px] font-semibold uppercase tracking-[0.4em] text-brand-gold/90 md:text-[10px]">
-                Abogados
+                {t('common.brand.abogadosNavbar')}
               </span>
             </span>
           </Link>
@@ -119,7 +126,7 @@ export default function Navbar() {
                 : 'border-transparent bg-brand-gold text-brand-navy shadow-md hover:bg-brand-gold-light hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
             )}
           >
-            Consultar
+            {t('common.cta.consultShort')}
           </a>
         </motion.div>
 
@@ -129,7 +136,9 @@ export default function Navbar() {
             onLight ? 'hover:bg-brand-navy/5' : 'hover:bg-white/10',
           )}
           onClick={() => setOpen(!open)}
-          aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+          aria-label={
+            open ? t('common.aria.closeMenu') : t('common.aria.openMenu')
+          }
           aria-expanded={open}
         >
           <svg
@@ -205,7 +214,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center rounded-md bg-brand-gold py-3 text-sm font-bold text-brand-navy"
               >
-                Consultar por WhatsApp
+                {t('common.cta.consultWhatsApp')}
               </a>
             </li>
           </motion.ul>

@@ -1,0 +1,46 @@
+{
+  "brand": {
+    "romioLineNavbar": "ROMIO Y ASOCIADOS",
+    "abogadosNavbar": "Abogados",
+    "wordmark": {
+      "romio": "ROMIO",
+      "yAsociados": "Y ASOCIADOS",
+      "yAsociadosRule": "— Y ASOCIADOS —",
+      "abogadosUpper": "ABOGADOS"
+    },
+    "logoAltFooter": "Romio y Asociados — Abogados"
+  },
+  "cta": {
+    "consultShort": "Consultar",
+    "consultWhatsApp": "Consultar por WhatsApp",
+    "consultWhatsAppFloatingAria": "Abrir WhatsApp para consulta gratuita",
+    "freeConsultSticky": "Consulta gratis",
+    "freeConsultWhatsAppHero": "Consulta gratis por WhatsApp",
+    "sendWhatsApp": "Enviar por WhatsApp",
+    "letsTalk": "Hablemos",
+    "freeConsultAreaHero": "Consulta inicial sin costo",
+    "exploreArea": "Explorar área"
+  },
+  "whatsapp": {
+    "defaultOpeningMessage": "Hola, me gustaría consultar con el estudio.",
+    "areaConsultPrefix": "Hola, me gustaría consultar sobre {area}."
+  },
+  "contact": {
+    "whatsappLabelShort": "WhatsApp"
+  },
+  "areasGrid": {
+    "freeOrientationBullet": "Consulta inicial orientativa, sin costo.",
+    "servicesFaqsBullet": "{count} servicios listados · {faqCount} preguntas frecuentes",
+    "ariaLabelExplore": "{name}. {tagline}. Explorar servicios y preguntas frecuentes."
+  },
+  "contactForm": {
+    "whatsappBody": "Hola, soy {name}.\nÁrea: {area}.\n\n{message}",
+    "generalAreaFallback": "consulta general",
+    "namePlaceholderIfEmpty": "…",
+    "messagePlaceholderIfEmpty": "…"
+  },
+  "aria": {
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  }
+}

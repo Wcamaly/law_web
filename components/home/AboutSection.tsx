@@ -6,14 +6,11 @@ import RomioMonogram from '@/components/brand/RomioMonogram'
 import SectionRule from '@/components/brand/SectionRule'
 import OdometerCounter from '@/components/motion/OdometerCounter'
 import Reveal from '@/components/motion/Reveal'
-
-const metrics = [
-  { value: '+10', label: 'Años de experiencia' },
-  { value: '+500', label: 'Casos resueltos' },
-  { value: '5', label: 'Áreas de práctica' },
-]
+import { getDictionary, t } from '@/i18n'
 
 export default function AboutSection() {
+  const about = getDictionary().home.about
+
   return (
     <section
       id="nosotros"
@@ -26,7 +23,7 @@ export default function AboutSection() {
           <Reveal className="will-change-transform">
             <div>
               <div className="mb-6">
-                <EditorialEyebrow label="Nosotros" tone="gold-on-dark" />
+                <EditorialEyebrow label={t('home.about.eyebrow')} tone="gold-on-dark" />
               </div>
               <blockquote className="relative">
                 <span
@@ -36,7 +33,7 @@ export default function AboutSection() {
                   &ldquo;
                 </span>
                 <p className="font-serif relative pl-6 text-2xl font-bold leading-snug text-white md:text-3xl lg:text-4xl">
-                  No tomamos más casos de los que podemos atender bien.
+                  {t('home.about.quote')}
                 </p>
                 <div className="pl-6 pt-4">
                   <SectionRule className="justify-start" maxWidth="14rem" />
@@ -49,17 +46,14 @@ export default function AboutSection() {
                 </span>
               </blockquote>
               <p className="mt-8 max-w-lg text-base leading-relaxed text-white/65">
-                Romio &amp; Asociados es un estudio jurídico con base en Mar del
-                Plata. Trabajamos como equipo en cada caso, combinando experiencia
-                en diversas ramas del derecho para ofrecer una solución integral y
-                eficiente.
+                {t('home.about.body')}
               </p>
             </div>
           </Reveal>
 
           <Reveal className="will-change-transform" delay={0.1}>
             <div className="grid grid-cols-3 gap-6 text-center">
-              {metrics.map((m) => (
+              {about.metrics.map((m) => (
                 <div key={m.label}>
                   <div className="font-serif mb-2 text-4xl font-bold text-brand-gold md:text-5xl">
                     <OdometerCounter value={m.value} />
@@ -75,8 +69,7 @@ export default function AboutSection() {
 
         <div className="relative z-10 mt-14 border-t border-white/10 pt-8">
           <p className="text-center font-serif text-sm italic text-brand-gold/55 md:text-base">
-            Compromiso · Claridad · Resultados · Confidencialidad · Honorarios
-            transparentes · Cercanía
+            {t('home.about.valuesLine')}
           </p>
         </div>
       </div>

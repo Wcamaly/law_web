@@ -4,6 +4,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import ScrollProgress from '@/components/motion/ScrollProgress'
 import FloatingWhatsApp from '@/components/motion/FloatingWhatsApp'
+import { getDictionary } from '@/i18n'
 import './globals.css'
 
 const inter = Inter({
@@ -18,17 +19,18 @@ const playfair = Playfair_Display({
   display: 'swap',
 })
 
+const { site } = getDictionary().metadata
+
 export const metadata: Metadata = {
-  title: 'Romio & Asociados — Estudio Jurídico Mar del Plata',
-  description:
-    'Estudio jurídico en Mar del Plata especializado en derecho civil, salud, tránsito, divorcios y legal tech.',
+  title: site.title,
+  description: site.description,
   openGraph: {
-    title: 'Romio & Asociados — Estudio Jurídico',
-    description: 'Asesoramiento legal profesional en Mar del Plata.',
-    url: 'https://romioasociados.com.ar',
-    siteName: 'Romio & Asociados',
-    locale: 'es_AR',
-    type: 'website',
+    title: site.openGraph.title,
+    description: site.openGraph.description,
+    url: site.openGraph.url,
+    siteName: site.openGraph.siteName,
+    locale: site.openGraph.locale,
+    type: site.openGraph.type as 'website',
   },
 }
 
@@ -39,7 +41,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="es"
+      lang={site.htmlLang}
       className={`${inter.variable} ${playfair.variable}`}
     >
       <body className="font-sans antialiased">

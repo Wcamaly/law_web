@@ -1,0 +1,41 @@
+{
+  "name": "Derecho Civil. Usucapión",
+  "shortName": "Civil",
+  "tagline": "Seguridad jurídica en tus transacciones inmobiliarias y sucesiones.",
+  "description": "La usucapión —prescripción adquisitiva— permite adquirir la propiedad de un inmueble mediante la posesión continua durante el plazo que fija la ley. También asesoramos en arrendamientos, sucesiones, reclamos civiles, defensa del consumidor y conflictos patrimoniales.",
+  "services": [
+    "Usucapión y prescripción adquisitiva — Tramitamos acciones de usucapión para que obtengas el título de propiedad de inmuebles poseídos de forma pública, pacífica e ininterrumpida.",
+    "Usucapión breve — Gestionamos la prescripción adquisitiva con justo título y buena fe, con posesión continua de 10 años (art. 1898 CCyC).",
+    "Usucapión larga — Tramitamos la usucapión veinteñal cuando poseés el inmueble con ánimo de dueño durante 20 años, sin exigir justo título ni buena fe (art. 1899 CCyC).",
+    "Análisis de posesión y documentación — Evaluamos tu situación posesoria, títulos, impuestos y actos de dominio para definir la vía más conveniente.",
+    "Juicios sucesorios y declaratoria de herederos — Representamos en sucesiones y declaratorias para ordenar la transmisión del patrimonio familiar.",
+    "Arrendamientos y contratos de alquiler — Creamos contratos de alquiler y resolvemos asuntos vinculados a arrendamientos y locaciones entre particulares y comerciales.",
+    "Redacción y revisión de contratos civiles — Prevenimos riesgos en compraventas, locaciones y acuerdos patrimoniales de valor significativo.",
+    "Procesos y reclamos civiles — Te representamos en reclamos y procesos civiles contra particulares y empresas: intimaciones, citación a conciliación y juicio civil.",
+    "Derecho del consumidor — Te acompañamos en el reclamo de tus derechos como consumidor conforme a la normativa nacional vigente.",
+    "Mediaciones y acuerdos extrajudiciales — Buscamos soluciones consensuadas antes de litigar, cuando el conflicto lo permite.",
+    "Reclamos por daños y perjuicios — Iniciamos reclamos civiles por incumplimientos contractuales o hechos que afecten tu patrimonio."
+  ],
+  "faq": [
+    {
+      "q": "¿Qué es la usucapión?",
+      "a": "La usucapión, también llamada prescripción adquisitiva, es un modo de adquirir la propiedad de un inmueble —casa, departamento o terreno— mediante la posesión continua durante el tiempo que establece la ley."
+    },
+    {
+      "q": "¿Cuáles son los requisitos para usucapir un inmueble?",
+      "a": "Debés poseer con ánimo de dueño (animus domini): de forma pública, pacífica e ininterrumpida, realizando actos que solo haría un propietario —mejoras, cercado, pago de impuestos y servicios— durante 10 años (breve) o 20 años (larga), según corresponda."
+    },
+    {
+      "q": "¿Cuál es la diferencia entre la usucapión breve y la larga?",
+      "a": "La usucapión breve (corta) requiere justo título, buena fe y 10 años de posesión continua con ánimo de dueño (art. 1898 CCyC). La usucapión larga (veinteñal) solo exige demostrar posesión pública, pacífica e ininterrumpida durante 20 años, sin necesidad de justo título ni buena fe (art. 1899 CCyC)."
+    },
+    {
+      "q": "¿Por qué conviene iniciar un trámite de usucapión?",
+      "a": "Sirve para regularizar inmuebles que llevás poseyendo hace años sin título actualizado: compras informales, sucesiones incompletas o falta de escrituración. La usucapión puede ser la vía para obtener legalmente la propiedad."
+    },
+    {
+      "q": "¿Cuánto tiempo demora una sucesión?",
+      "a": "Una sucesión simple puede resolverse en 6 a 12 meses. Si hay conflicto entre herederos o bienes complejos, puede extenderse. Lo evaluamos en una consulta inicial sin costo."
+    }
+  ]
+}

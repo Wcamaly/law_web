@@ -2,11 +2,17 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
-import { WHATSAPP_NUMBER, WHATSAPP_URL, CONTACT_EMAIL, areas } from '@/lib/areas'
+import {
+  WHATSAPP_NUMBER,
+  WHATSAPP_URL,
+  CONTACT_EMAIL,
+  areas,
+} from '@/lib/areas'
 import EditorialEyebrow from '@/components/brand/EditorialEyebrow'
 import SectionRule from '@/components/brand/SectionRule'
 import Reveal from '@/components/motion/Reveal'
 import Magnetic from '@/components/motion/Magnetic'
+import { interpolate, t } from '@/i18n'
 
 const labelClass =
   'font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-brand-gold/55'
@@ -22,8 +28,13 @@ export default function ContactSection() {
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
     const area =
-      areas.find((a) => a.slug === areaSlug)?.shortName ?? 'consulta general'
-    const body = `Hola, soy ${name || '…'}.\nÁrea: ${area}.\n\n${message || '…'}`
+      areas.find((a) => a.slug === areaSlug)?.shortName ??
+      t('common.contactForm.generalAreaFallback')
+    const body = interpolate(t('common.contactForm.whatsappBody'), {
+      name: name || t('common.contactForm.namePlaceholderIfEmpty'),
+      area,
+      message: message || t('common.contactForm.messagePlaceholderIfEmpty'),
+    })
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(body)}`
     window.open(url, '_blank', 'noopener,noreferrer')
   }
@@ -33,10 +44,10 @@ export default function ContactSection() {
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <div className="mb-4">
-            <EditorialEyebrow label="Contacto" tone="gold" />
+            <EditorialEyebrow label={t('home.contact.eyebrow')} tone="gold" />
           </div>
           <h2 className="text-display font-serif mb-4 max-w-3xl font-bold text-brand-navy">
-            ¿Tenés una consulta?
+            {t('home.contact.title')}
           </h2>
           <SectionRule className="mb-10" maxWidth="14rem" />
         </Reveal>
@@ -45,12 +56,11 @@ export default function ContactSection() {
           <Reveal className="will-change-transform">
             <div>
               <p className="text-lg leading-relaxed text-gray-600">
-                Escribinos sin compromiso. La primera consulta es gratuita y
-                respondemos a la brevedad.
+                {t('home.contact.intro')}
               </p>
               <ul className="mt-10 space-y-6 text-sm">
                 <li>
-                  <span className={labelClass}>WhatsApp</span>
+                  <span className={labelClass}>{t('home.contact.labels.whatsapp')}</span>
                   <Magnetic strength={10}>
                     <a
                       href={WHATSAPP_URL}
@@ -73,7 +83,7 @@ export default function ContactSection() {
                         </svg>
                       </span>
                       <span className="font-medium underline-offset-4 group-hover:underline">
-                        Escribinos por WhatsApp
+                        {t('home.contact.labels.linkWhatsApp')}
                       </span>
                       <span className="cta-arrow-mask" aria-hidden>
                         <span className="cta-arrow-inner text-brand-navy">→</span>
@@ -82,7 +92,7 @@ export default function ContactSection() {
                   </Magnetic>
                 </li>
                 <li>
-                  <span className={labelClass}>Email</span>
+                  <span className={labelClass}>{t('home.contact.labels.email')}</span>
                   <Magnetic strength={8}>
                     <a
                       href={`mailto:${CONTACT_EMAIL}`}
@@ -96,12 +106,12 @@ export default function ContactSection() {
                   </Magnetic>
                 </li>
                 <li>
-                  <span className={labelClass}>Ubicación</span>
+                  <span className={labelClass}>{t('home.contact.labels.location')}</span>
                   <p className="mt-2 text-gray-600">
-                    Mar del Plata, Argentina
+                    {t('home.contact.locationLine')}
                     <br />
                     <span className="text-gray-500">
-                      Atención L–V 9:00–18:00 (placeholder)
+                      {t('home.contact.labels.hoursPlaceholder')}
                     </span>
                   </p>
                 </li>
@@ -119,7 +129,7 @@ export default function ContactSection() {
                   htmlFor="contact-name"
                   className={formLabelClass}
                 >
-                  Nombre
+                  {t('home.contact.form.nameLabel')}
                 </label>
                 <input
                   id="contact-name"
@@ -128,7 +138,7 @@ export default function ContactSection() {
                   onChange={(e) => setName(e.target.value)}
                   autoComplete="name"
                   className="mt-2 w-full border-b border-brand-navy/15 bg-transparent py-2 text-sm text-brand-navy outline-none transition-colors focus:border-brand-gold"
-                  placeholder="Tu nombre"
+                  placeholder={t('home.contact.form.namePlaceholder')}
                 />
               </div>
               <div>
@@ -136,7 +146,7 @@ export default function ContactSection() {
                   htmlFor="contact-area"
                   className={formLabelClass}
                 >
-                  Área
+                  {t('home.contact.form.areaLabel')}
                 </label>
                 <select
                   id="contact-area"
@@ -145,7 +155,7 @@ export default function ContactSection() {
                   onChange={(e) => setAreaSlug(e.target.value)}
                   className="mt-2 w-full cursor-pointer border-b border-brand-navy/15 bg-transparent py-2 text-sm text-brand-navy outline-none transition-colors focus:border-brand-gold"
                 >
-                  <option value="">Elegí un área (opcional)</option>
+                  <option value="">{t('home.contact.form.areaPlaceholder')}</option>
                   {areas.map((a) => (
                     <option key={a.slug} value={a.slug}>
                       {a.shortName}
@@ -158,7 +168,7 @@ export default function ContactSection() {
                   htmlFor="contact-message"
                   className={formLabelClass}
                 >
-                  Mensaje
+                  {t('home.contact.form.messageLabel')}
                 </label>
                 <textarea
                   id="contact-message"
@@ -167,7 +177,7 @@ export default function ContactSection() {
                   onChange={(e) => setMessage(e.target.value)}
                   rows={4}
                   className="mt-2 w-full resize-y border-b border-brand-navy/15 bg-transparent py-2 text-sm text-brand-navy outline-none transition-colors focus:border-brand-gold"
-                  placeholder="Contanos brevemente tu situación"
+                  placeholder={t('home.contact.form.messagePlaceholder')}
                 />
               </div>
               <Magnetic strength={12}>
@@ -175,7 +185,7 @@ export default function ContactSection() {
                   type="submit"
                   className="group inline-flex w-full items-center justify-center gap-2 rounded-md border border-transparent bg-brand-navy px-6 py-3.5 text-sm font-bold text-white transition-[background-color,color,border-color] duration-300 hover:border-brand-gold/50 hover:bg-brand-gold hover:text-brand-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold"
                 >
-                  Enviar por WhatsApp
+                  {t('home.contact.form.submit')}
                   <span className="cta-arrow-mask text-white group-hover:text-brand-navy" aria-hidden>
                     <span className="cta-arrow-inner text-base">→</span>
                   </span>

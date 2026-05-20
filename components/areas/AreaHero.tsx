@@ -8,6 +8,7 @@ import EditorialEyebrow from '@/components/brand/EditorialEyebrow'
 import TextReveal from '@/components/motion/TextReveal'
 import Magnetic from '@/components/motion/Magnetic'
 import CursorSpotlight from '@/components/motion/CursorSpotlight'
+import { t } from '@/i18n'
 
 export default function AreaHero({ area }: { area: Area }) {
   const reduced = useReducedMotion()
@@ -75,7 +76,7 @@ export default function AreaHero({ area }: { area: Area }) {
             <span className="inline-block transition-transform duration-300 group-hover:-translate-x-1">
               ←
             </span>
-            Volver a áreas
+            {t('areas.ui.hero.backToAreas')}
           </Link>
         </motion.div>
 
@@ -85,12 +86,6 @@ export default function AreaHero({ area }: { area: Area }) {
           tone="gold-on-dark"
           className="mb-4"
         />
-
-        <div className="mb-6 flex flex-wrap items-end gap-4">
-          <span className="text-4xl md:text-5xl" aria-hidden>
-            {area.icon}
-          </span>
-        </div>
 
         <TextReveal
           as="h1"
@@ -122,7 +117,7 @@ export default function AreaHero({ area }: { area: Area }) {
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2 rounded-md bg-brand-gold px-8 py-3.5 text-sm font-bold text-brand-navy shadow-md transition-[box-shadow,background-color] duration-300 hover:bg-brand-gold-light hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold"
             >
-              Consulta inicial sin costo
+              {t('areas.ui.hero.primaryCta')}
               <span className="cta-arrow-mask text-brand-navy" aria-hidden>
                 <span className="cta-arrow-inner text-base">→</span>
               </span>

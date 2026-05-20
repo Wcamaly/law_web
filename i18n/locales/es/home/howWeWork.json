@@ -1,0 +1,30 @@
+{
+  "eyebrow": "Proceso",
+  "title": "Cómo trabajamos",
+  "steps": [
+    {
+      "roman": "I",
+      "icon": "📞",
+      "title": "Consulta",
+      "description": "Nos contactás por WhatsApp o email. Primera consulta sin costo para entender tu situación."
+    },
+    {
+      "roman": "II",
+      "icon": "📋",
+      "title": "Análisis",
+      "description": "Estudiamos tu caso en detalle, evaluamos las posibilidades y te explicamos el panorama con claridad."
+    },
+    {
+      "roman": "III",
+      "icon": "⚖️",
+      "title": "Estrategia",
+      "description": "Definimos el mejor camino legal: negociación, mediación o juicio según tu caso y tus objetivos."
+    },
+    {
+      "roman": "IV",
+      "icon": "✅",
+      "title": "Resultado",
+      "description": "Ejecutamos la estrategia y te mantenemos informado en cada etapa hasta obtener el mejor resultado."
+    }
+  ]
+}

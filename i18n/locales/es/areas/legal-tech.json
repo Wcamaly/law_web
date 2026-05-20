@@ -1,0 +1,28 @@
+{
+  "name": "Legal Tech",
+  "shortName": "Legal Tech",
+  "tagline": "Derecho para la economía digital.",
+  "description": "Asesoramos a startups, desarrolladores, e-commerces y empresas tech en los aspectos legales de sus negocios digitales. Privacidad, contratos de software, y cumplimiento normativo en el mundo digital.",
+  "services": [
+    "Contratos de desarrollo de software y SaaS",
+    "Términos y condiciones para apps y plataformas",
+    "Política de privacidad y protección de datos (PDPA)",
+    "Aspectos legales para startups y emprendimientos",
+    "Contratos de e-commerce y marketplaces",
+    "Protección de propiedad intelectual digital"
+  ],
+  "faq": [
+    {
+      "q": "¿Necesito términos y condiciones para mi app?",
+      "a": "Sí. Los T&C protegen tu negocio, limitan responsabilidad y definen las reglas de uso. Además son obligatorios en plataformas como App Store y Google Play."
+    },
+    {
+      "q": "¿Qué datos puedo guardar de mis usuarios?",
+      "a": "Depende de lo que declares en tu política de privacidad y de las leyes aplicables (en Argentina, la Ley 25.326). Un abogado puede ayudarte a diseñar una estrategia de datos legal y segura."
+    },
+    {
+      "q": "¿Cómo protejo mi software de que me lo copien?",
+      "a": "El código fuente está protegido por derechos de autor desde su creación. Adicionalmente, podemos registrar la obra y redactar contratos con cláusulas de confidencialidad y no competencia."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "hero": {
+    "backToAreas": "Volver a áreas",
+    "primaryCta": "Consulta inicial sin costo"
+  },
+  "serviceList": {
+    "eyebrow": "Servicios",
+    "title": "¿En qué te ayudamos?"
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Preguntas frecuentes"
+  },
+  "cta": {
+    "eyebrow": "Siguiente paso",
+    "title": "¿Tenés una consulta sobre {area}?",
+    "body": "Primera consulta sin costo. Te respondemos a la brevedad.",
+    "button": "Consultar por WhatsApp"
+  }
+}

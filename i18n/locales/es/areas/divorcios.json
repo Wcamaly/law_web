@@ -1,0 +1,28 @@
+{
+  "name": "Divorcios",
+  "shortName": "Divorcios",
+  "tagline": "Divorcio vincular express o contencioso.",
+  "description": "Acompañamos a nuestros clientes en el proceso de divorcio con discreción y eficiencia. Tramitamos divorcios de mutuo acuerdo (express) y contenciosos, resolviendo la división de bienes con claridad.",
+  "services": [
+    "Divorcio vincular de mutuo acuerdo (express)",
+    "Divorcio contencioso",
+    "División y liquidación de bienes gananciales",
+    "Acuerdos sobre vivienda familiar",
+    "Alimentos entre cónyuges",
+    "Asesoramiento previo al matrimonio"
+  ],
+  "faq": [
+    {
+      "q": "¿Cuánto tarda un divorcio express?",
+      "a": "Un divorcio de mutuo acuerdo puede resolverse en 1 a 3 meses si ambas partes están de acuerdo en todos los términos. Es el proceso más rápido y económico."
+    },
+    {
+      "q": "¿Qué pasa con los bienes si no llegamos a un acuerdo?",
+      "a": "Si no hay acuerdo, iniciamos el proceso contencioso. El juez puede ordenar una liquidación de los bienes en partes iguales si son gananciales."
+    },
+    {
+      "q": "¿El divorcio incluye la tenencia de los hijos?",
+      "a": "No directamente — la tenencia es un proceso separado que gestionamos de forma coordinada si es necesario."
+    }
+  ]
+}

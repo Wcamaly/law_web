@@ -1,0 +1,28 @@
+{
+  "name": "Derecho a la Salud",
+  "shortName": "Salud",
+  "tagline": "Amparo de cobertura médica y mala praxis.",
+  "description": "Defendemos el derecho a la salud frente a obras sociales, prepagas y establecimientos de salud. Tramitamos amparos urgentes para garantizar coberturas y representamos a pacientes en casos de mala praxis.",
+  "services": [
+    "Amparos de salud urgentes",
+    "Reclamos contra obras sociales y prepagas",
+    "Cobertura de medicamentos de alto costo",
+    "Casos de mala praxis médica",
+    "Internaciones y tratamientos negados",
+    "Discapacidad y prestaciones especiales"
+  ],
+  "faq": [
+    {
+      "q": "¿Qué hago si mi obra social no cubre mi tratamiento?",
+      "a": "Puede interponer un amparo de salud. Es un recurso judicial urgente que obliga a la obra social a brindar la cobertura mientras se resuelve el fondo. Actuamos con rapidez en estos casos."
+    },
+    {
+      "q": "¿Puedo reclamar por mala praxis?",
+      "a": "Sí. Si sufrió daños por un error médico, tiene derecho a reclamar indemnización. Evaluamos el caso con documentación médica y determinamos si existe responsabilidad profesional."
+    },
+    {
+      "q": "¿El amparo de salud es rápido?",
+      "a": "Sí, los amparos son procesos urgentes. En casos de riesgo de vida o daño irreparable, los jueces pueden ordenar medidas cautelares en 24 a 48 horas."
+    }
+  ]
+}

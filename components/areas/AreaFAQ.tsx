@@ -8,6 +8,7 @@ import {
 } from 'motion/react'
 import type { Area } from '@/lib/areas'
 import SectionHeader from '@/components/motion/SectionHeader'
+import { t } from '@/i18n'
 
 export default function AreaFAQ({ area }: { area: Area }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -18,8 +19,8 @@ export default function AreaFAQ({ area }: { area: Area }) {
       <div className="mx-auto max-w-3xl">
         <SectionHeader
           className="mb-10 text-center"
-          eyebrow="Preguntas frecuentes"
-          title="Preguntas frecuentes"
+          eyebrow={t('areas.ui.faq.eyebrow')}
+          title={t('areas.ui.faq.title')}
           align="center"
           tone="gold"
           underlineClassName="bg-brand-gold"

@@ -4,6 +4,7 @@ import type { Area } from '@/lib/areas'
 import { toRoman } from '@/lib/numerals'
 import StaggerGroup, { StaggerItem } from '@/components/motion/StaggerGroup'
 import SectionHeader from '@/components/motion/SectionHeader'
+import { t } from '@/i18n'
 
 export default function ServiceList({ area }: { area: Area }) {
   return (
@@ -12,8 +13,8 @@ export default function ServiceList({ area }: { area: Area }) {
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
           <div>
             <SectionHeader
-              eyebrow="Servicios"
-              title="¿En qué te ayudamos?"
+              eyebrow={t('areas.ui.serviceList.eyebrow')}
+              title={t('areas.ui.serviceList.title')}
               description={area.description}
               showUnderline={false}
             />

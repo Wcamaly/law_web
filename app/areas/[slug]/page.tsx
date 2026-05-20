@@ -6,6 +6,7 @@ import AreaHero from '@/components/areas/AreaHero'
 import ServiceList from '@/components/areas/ServiceList'
 import AreaFAQ from '@/components/areas/AreaFAQ'
 import AreaCTA from '@/components/areas/AreaCTA'
+import { t } from '@/i18n'
 
 export function generateStaticParams() {
   return areas.map((area) => ({ slug: area.slug }))
@@ -20,11 +21,13 @@ export async function generateMetadata({
   const area = getArea(slug)
   if (!area) return {}
 
+  const title = t('metadata.areaPage.titleSuffix', { name: area.name })
+
   return {
-    title: `${area.name} — Romio & Asociados`,
+    title,
     description: area.description,
     openGraph: {
-      title: `${area.name} — Romio & Asociados`,
+      title,
       description: area.description,
     },
   }

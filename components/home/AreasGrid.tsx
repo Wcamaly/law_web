@@ -11,6 +11,7 @@ import Reveal from '@/components/motion/Reveal'
 import StaggerGroup, { StaggerItem } from '@/components/motion/StaggerGroup'
 import SectionHeader from '@/components/motion/SectionHeader'
 import { cn } from '@/lib/cn'
+import { t } from '@/i18n'
 
 const GOLD = '#b8954a'
 
@@ -62,11 +63,10 @@ export default function AreasGrid() {
       <div className="relative mx-auto max-w-6xl">
         <Reveal className="mb-14">
           <SectionHeader
-            eyebrow="Áreas de práctica"
+            eyebrow={t('home.areasGrid.eyebrow')}
             tone="gold"
-            title="Áreas de práctica"
-            description="Elegí el área que mejor encaja con tu situación. En cada página
-            encontrás servicios concretos y respuestas a dudas frecuentes."
+            title={t('home.areasGrid.title')}
+            description={t('home.areasGrid.description')}
           />
         </Reveal>
 
@@ -78,7 +78,10 @@ export default function AreasGrid() {
             >
               <Link
                 href={`/areas/${area.slug}`}
-                aria-label={`${area.name}. ${area.tagline}. Explorar servicios y preguntas frecuentes.`}
+                aria-label={t('common.areasGrid.ariaLabelExplore', {
+                  name: area.name,
+                  tagline: area.tagline,
+                })}
                 className={cn(
                   'group relative flex h-full min-h-[280px] w-full flex-col overflow-hidden rounded-2xl border border-gray-200/90 bg-white',
                   'transition-[border-color,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]',
@@ -108,10 +111,6 @@ export default function AreasGrid() {
                     </span>
                   </div>
 
-                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl text-2xl transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-105 bg-[#f6efe0]">
-                    {area.icon}
-                  </div>
-
                   <p className="mb-1 font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-brand-navy/40">
                     {area.shortName}
                   </p>
@@ -128,26 +127,30 @@ export default function AreasGrid() {
                         className="h-1 w-1 shrink-0 rounded-full bg-brand-gold"
                         aria-hidden
                       />
-                      Consulta inicial orientativa, sin costo.
+                      {t('common.areasGrid.freeOrientationBullet')}
                     </li>
                     <li className="flex items-center gap-2">
                       <span
                         className="h-1 w-1 shrink-0 rounded-full bg-brand-gold"
                         aria-hidden
                       />
-                      {area.services.length} servicios listados · {area.faq.length}{' '}
-                      preguntas frecuentes
+                      {t('common.areasGrid.servicesFaqsBullet', {
+                        count: area.services.length,
+                        faqCount: area.faq.length,
+                      })}
                     </li>
                   </ul>
 
                   <div className="mt-auto border-t border-gray-100 pt-5">
                     <span className="inline-flex w-full items-center justify-between gap-3 text-sm font-bold text-brand-gold">
-                      <span>Explorar área</span>
+                      <span>{t('common.cta.exploreArea')}</span>
                       <span
-                        className="cta-arrow-mask inline-flex h-9 w-9 items-center justify-center rounded-full border border-brand-gold/25 bg-white text-base"
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-brand-gold/25 bg-white text-base transition-[background-color,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:border-brand-gold/50 group-hover:bg-brand-gold/10 group-focus-visible:border-brand-gold/50 group-focus-visible:bg-brand-gold/10"
                         aria-hidden
                       >
-                        <span className="cta-arrow-inner">→</span>
+                        <span className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5">
+                          →
+                        </span>
                       </span>
                     </span>
                   </div>
@@ -161,16 +164,15 @@ export default function AreasGrid() {
               <div>
                 <SectionRule className="mb-5" maxWidth="7rem" />
                 <EditorialEyebrow
-                  label="¿No sabés por dónde empezar?"
+                  label={t('home.areasGrid.ctaCardEyebrow')}
                   tone="gold-on-dark"
                   className="mb-2"
                 />
                 <h3 className="font-serif mt-3 text-xl font-bold md:text-2xl">
-                  ¿No estás seguro por dónde empezar?
+                  {t('home.areasGrid.ctaCardTitle')}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-white/70">
-                  Contanos tu situación por WhatsApp y te orientamos en el área
-                  correcta.
+                  {t('home.areasGrid.ctaCardBody')}
                 </p>
               </div>
               <a
@@ -179,7 +181,7 @@ export default function AreasGrid() {
                 rel="noopener noreferrer"
                 className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md border border-brand-gold/40 bg-brand-gold px-6 py-3.5 text-sm font-bold text-brand-navy transition-[transform,background-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-brand-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold"
               >
-                Hablemos
+                {t('common.cta.letsTalk')}
                 <span className="cta-arrow-mask text-brand-navy" aria-hidden>
                   <span className="cta-arrow-inner text-base">→</span>
                 </span>

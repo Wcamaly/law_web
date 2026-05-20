@@ -1,12 +1,15 @@
 'use client'
 
-import { Area, WHATSAPP_NUMBER } from '@/lib/areas'
+import { Area, buildWhatsappUrl } from '@/lib/areas'
 import EditorialEyebrow from '@/components/brand/EditorialEyebrow'
 import Reveal from '@/components/motion/Reveal'
 import Magnetic from '@/components/motion/Magnetic'
+import { t } from '@/i18n'
 
 export default function AreaCTA({ area }: { area: Area }) {
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20${encodeURIComponent(area.shortName)}.`
+  const url = buildWhatsappUrl(
+    t('common.whatsapp.areaConsultPrefix', { area: area.shortName }),
+  )
 
   return (
     <section className="relative overflow-hidden py-16 px-6 text-white">
@@ -30,16 +33,16 @@ export default function AreaCTA({ area }: { area: Area }) {
       <Reveal className="relative z-10 mx-auto max-w-2xl text-center">
         <div className="mb-3 flex justify-center">
           <EditorialEyebrow
-            label="Siguiente paso"
+            label={t('areas.ui.cta.eyebrow')}
             tone="gold-on-dark"
             align="center"
           />
         </div>
         <h2 className="font-serif mt-3 text-2xl font-bold md:text-3xl">
-          ¿Tenés una consulta sobre {area.shortName}?
+          {t('areas.ui.cta.title', { area: area.shortName })}
         </h2>
         <p className="mt-3 text-base text-white/80">
-          Primera consulta sin costo. Te respondemos a la brevedad.
+          {t('areas.ui.cta.body')}
         </p>
         <div className="mt-8 flex justify-center">
           <Magnetic strength={14}>
@@ -49,7 +52,7 @@ export default function AreaCTA({ area }: { area: Area }) {
               rel="noopener noreferrer"
               className="btn-shimmer-wrap group relative inline-flex items-center justify-center gap-2 rounded-md bg-white px-8 py-4 text-sm font-bold text-brand-gold shadow-lg transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold"
             >
-              Consultar por WhatsApp
+              {t('areas.ui.cta.button')}
               <span className="cta-arrow-mask text-brand-gold" aria-hidden>
                 <span className="cta-arrow-inner">→</span>
               </span>

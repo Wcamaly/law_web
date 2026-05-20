@@ -1,0 +1,39 @@
+{
+  "name": "Accidentes de Trabajo",
+  "shortName": "Laboral",
+  "tagline": "Determinación de incapacidad ante la Superintendencia de Riesgos del Trabajo y Comisiones Médicas.",
+  "description": "Asesoramos a trabajadores que sufrieron accidentes laborales o enfermedades profesionales. Gestionamos reclamos indemnizatorios frente a la ART, Comisiones Médicas y responsables, sin costo inicial.",
+  "services": [
+    "Accidentes de Trabajo — Asesoramos a trabajadores que sufrieron accidentes durante la jornada laboral, gestionando reclamos indemnizatorios frente a la ART y responsables.",
+    "Accidente In Itinere — Intervenimos en casos de accidentes ocurridos en el trayecto hacia o desde el trabajo, reclamando la cobertura e indemnización correspondiente.",
+    "Reclamos ante la ART — Gestionamos reclamos administrativos y judiciales contra la ART, defendiendo los derechos del trabajador ante incumplimientos o rechazos de cobertura.",
+    "Indemnización por Accidente Laboral — Asesoramos en el cálculo y reclamo de indemnizaciones por lesiones, incapacidad temporaria o permanente y daños derivados del accidente laboral.",
+    "Enfermedades Profesionales — Brindamos asesoramiento legal en enfermedades profesionales reconocidas por la ART, reclamando prestaciones médicas e indemnizaciones.",
+    "Incapacidad Laboral — Asesoramos en casos de incapacidad laboral derivada de accidentes o enfermedades, evaluando el porcentaje y el reclamo indemnizatorio correspondiente.",
+    "Rechazo de Cobertura por la ART — Asesoramos a trabajadores ante rechazos injustificados de la ART, iniciando reclamos para exigir prestaciones médicas, dinerarias e indemnizaciones conforme a la ley.",
+    "Alta Médica Prematura — Intervenimos en casos de alta médica otorgada sin recuperación total, reclamando la reapertura del tratamiento y la correcta evaluación de secuelas e incapacidad.",
+    "Recalificación de Incapacidad — Asesoramos en la revisión del porcentaje de incapacidad laboral, solicitando una recalificación médica y legal para obtener la indemnización que realmente corresponde."
+  ],
+  "faq": [
+    {
+      "q": "¿Qué es la ART y para qué sirve?",
+      "a": "La ART (Aseguradora de Riesgos del Trabajo) es la empresa contratada por tu empleador para cubrir accidentes y enfermedades que ocurran durante el trabajo o en el trayecto. Si te lesionás, la ART debe cubrir tu tratamiento médico y pagarte una indemnización según la incapacidad determinada por la Comisión Médica."
+    },
+    {
+      "q": "¿Cuánto tiempo tengo para reclamar a la ART?",
+      "a": "El plazo para iniciar el reclamo ante la ART es de 2 años desde el accidente o desde que tomaste conocimiento de la enfermedad profesional. Aun así, conviene actuar cuanto antes para preservar pruebas y agilizar el trámite."
+    },
+    {
+      "q": "¿Puedo reclamar aunque no haya denuncia oficial del accidente?",
+      "a": "Sí, en muchos casos es posible reclamar aunque el empleador no haya denunciado formalmente el siniestro. Lo importante es contar con evidencia del accidente y de la atención médica recibida. Evaluamos tu caso en una consulta inicial sin costo."
+    },
+    {
+      "q": "¿La ART puede rechazar mi siniestro?",
+      "a": "Sí, la ART puede rechazar el siniestro si considera que no tiene origen laboral. Ante un rechazo tenés derecho a impugnar la decisión ante la Comisión Médica y, de ser necesario, en sede judicial. Gestionamos estos rechazos de forma habitual."
+    },
+    {
+      "q": "¿Cómo se calcula la indemnización por accidente laboral?",
+      "a": "La indemnización se calcula principalmente en función del Ingreso Base de los últimos 12 meses, el porcentaje de incapacidad fijado por la Comisión Médica y la edad del trabajador al momento del accidente, conforme a la fórmula del sistema de riesgos del trabajo."
+    }
+  ]
+}

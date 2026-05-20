@@ -1,4 +1,5 @@
 import { cn } from '@/lib/cn'
+import { t } from '@/i18n'
 
 type RomioWordmarkProps = {
   className?: string
@@ -17,17 +18,17 @@ export default function RomioWordmark({
     return (
       <div className={cn('pointer-events-none text-center font-serif text-current', className)}>
         <p className="text-[clamp(3.5rem,14vw,9rem)] font-bold leading-none tracking-[0.04em] text-white/[0.14]">
-          ROMIO
+          {t('common.brand.wordmark.romio')}
         </p>
         <div className="mx-auto mt-4 flex max-w-md items-center justify-center gap-3 text-brand-gold/70">
           <span className="h-px flex-1 bg-brand-gold/60" />
           <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.35em] text-brand-gold/90">
-            Y ASOCIADOS
+            {t('common.brand.wordmark.yAsociados')}
           </span>
           <span className="h-px flex-1 bg-brand-gold/60" />
         </div>
         <p className="mt-3 font-sans text-[10px] font-medium uppercase tracking-[0.42em] text-white/40">
-          ABOGADOS
+          {t('common.brand.wordmark.abogadosUpper')}
         </p>
       </div>
     )
@@ -56,13 +57,13 @@ export default function RomioWordmark({
 
   return (
     <div className={cn('text-center font-serif text-current', className)}>
-      <p className={title}>ROMIO</p>
-      <p className={sub}>— Y ASOCIADOS —</p>
+      <p className={title}>{t('common.brand.wordmark.romio')}</p>
+      <p className={sub}>{t('common.brand.wordmark.yAsociadosRule')}</p>
       <div
         className="mx-auto my-3 h-px max-w-[min(90%,20rem)] bg-brand-gold/40"
         aria-hidden
       />
-      <p className={abog}>ABOGADOS</p>
+      <p className={abog}>{t('common.brand.wordmark.abogadosUpper')}</p>
     </div>
   )
 }

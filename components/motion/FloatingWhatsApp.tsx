@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { WHATSAPP_URL } from '@/lib/areas'
+import { t } from '@/i18n'
 
 export default function FloatingWhatsApp() {
   const [visible, setVisible] = useState(false)
@@ -26,13 +27,13 @@ export default function FloatingWhatsApp() {
           transition={{ type: 'spring', stiffness: 320, damping: 26 }}
         >
           <span className="pointer-events-none rounded-full bg-[#25d366] px-3 py-1 text-xs font-semibold text-white opacity-0 shadow-lg shadow-[#25d366]/35 transition-opacity duration-200 group-hover:opacity-100 sm:opacity-100">
-            Consulta gratis
+            {t('common.cta.freeConsultSticky')}
           </span>
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Abrir WhatsApp para consulta gratuita"
+            aria-label={t('common.cta.consultWhatsAppFloatingAria')}
             className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25d366] text-white shadow-lg shadow-[#25d366]/40 ring-4 ring-white/20 transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25d366]"
           >
             <span
